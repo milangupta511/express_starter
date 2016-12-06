@@ -4,7 +4,7 @@ xhr.onreadystatechange = function(){
 		onReceivingData(this.responseText)
 	}
 }
-xhr.open("GET", "/blocks", true);
+xhr.open("GET", "/blocks?limit=3", true);
 xhr.send()
 
 function onReceivingData(response){
