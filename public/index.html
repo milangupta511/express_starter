@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/form-serialize/serialize-0.2.min.js"></script>
 	<title></title>
 </head>
 <body>
 <h1> Learning Express JS </h1>
 
+<h2>get at /blocks</h2>
 <ul class="block-list">
 </ul>
 
-<script src="scripts.js"></script>
+<h2>get at /blocks/status?limit=..</h2>
+<div class="block-limit">
+</div>
+
+<h2>get at /blocks/:name</h2>
+<div class="block-param">
+</div> 
+<h2> get at /blocks/location/:name</h2>
+<div class="block-location"></div>
+
+<h2> Add new Block </h2>
+<form method="POST" action="" id="addBlockForm">
+	<label for ="blockName">Name</label>
+	<input type="text" id="blockName" name="name" placeholder="Name" />
+	<label for ="blockStatus">Status</label>
+	<input type="text" id="blockStatus" name="status" placeholder="Status" />
+	<label for ="blockLocation">Location</label>
+	<input type="text" id="blockLocation" name="location" placeholder="Location" />
+	<input type="Submit" value="Click to submit">
+</form>
+<script src="getBlocks.js"></script>
+<script src="getLimitBlocks.js"></script>
+<script src="getParamBlocks.js"></script>
+<script src="getBlockLocation.js"></script>
+<script src="addNewBlock.js"></script>
+
 </body>
 </html>
