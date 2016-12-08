@@ -37,7 +37,6 @@ app.post('/blocks', parseUrlEncoded, function(request, response){
 		"status": newBlock.status,
 		"location": newBlock.location
 	}
-	console.log(blocks)
 	response.status(201).json(Object.keys(blocks))
 
 })
@@ -56,6 +55,11 @@ app.get('/blocks/status/:name', function(request, response){
 	}else{
 		response.json(description["status"])
 	}
+})
+app.delete('/blocks/:name', function(request, response){
+	delete blocks[request.blockName]
+	response.status(200).json(Object.keys(blocks))
+	//response.sendStatus  will send OK in json 
 })
 app.listen(port, function(){
 	console.log("Listening on port: " + port);
